@@ -1,0 +1,66 @@
+.layterms {
+  padding: 3rem 6rem;
+
+  p {
+    line-height:1.4;
+  }
+
+  &--grid {
+    display:grid;
+    grid-template-columns: 75% 25%;
+    grid-gap:2rem;
+    @include respond(tab-land-small) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__left {
+    grid-column:1/2;
+    @include respond(tab-land-small) {
+      grid-column: 1/-1;
+    }
+  }
+
+  &__right {
+    grid-column:2/3;
+    @include respond(tab-land-small) {
+      grid-column: 1/-1;
+    }
+  }
+
+  .related-treatments-list {
+    background:#fff;
+    height:40rem;
+    width:100%;
+    box-shadow: 0 .5rem 1rem rgba(#000, .4);
+    overflow-y:auto;
+    overflow-x:visible !important;
+  }
+
+  .related-treatments-list-item {
+
+    list-style:none;
+    border-bottom:1px solid #ccc;
+    padding:1rem;
+    position:relative;
+
+    &:hover {
+      background:#F0F0F0;
+    }
+
+  }
+
+  .active {
+    background:$color-tertiary-dark;
+    color:white;
+    &:hover {
+      background:$color-tertiary-dark;
+    }
+  }
+
+  .related-treatments-list-item:hover .popovers {
+    display:inline-block;
+  }
+
+
+}

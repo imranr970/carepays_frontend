@@ -1,0 +1,35 @@
+
+.user-profile-view-mode {
+  padding:2rem 15rem;
+}
+
+.user-info-text-view {
+  padding:2rem;
+  background:#F2F7FB;
+  margin:2rem 0;
+  display:grid;
+  grid-template-columns:13% 90%;
+  grid-gap:4rem;
+
+  .user-image-section {
+    width:100%;
+    height:100%;
+    align-self:center !important;
+    img {
+      width:13rem;
+      height:13rem;
+      display:block;
+      border-radius:.7rem;
+      border:1px solid #ccc;
+      padding:2px;
+    }
+  }
+
+}
+
+.user-appointments {
+  display:grid;
+  grid-template-columns: 80% 20%;
+  grid-gap:1rem;
+}
+

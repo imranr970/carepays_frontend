@@ -1,0 +1,45 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/animations';
+
+@import 'pages/home';
+@import 'pages/shopping-window';
+@import 'pages/cart';
+@import 'pages/checkout';
+@import 'pages/user_profile';
+@import 'pages/user_profile_view';
+@import 'pages/login';
+@import 'pages/register';
+@import 'pages/error';
+@import 'pages/search-page';
+@import 'pages/anatomy';
+@import 'pages/preventive-care';
+@import 'pages/treatment_layterms';
+@import 'pages/admin';
+@import 'pages/profile_eobs';
+@import 'pages/user_profile_order';
+@import 'pages/user_insurance';
+
+@import 'components/button';
+@import 'components/static_icon';
+@import 'components/card';
+@import 'components/doctor_card';
+@import 'components/dropdown';
+@import 'components/form';
+@import 'components/table';
+@import 'components/notification';
+@import 'components/modal';
+@import 'components/shadows';
+@import 'components/popover';
+@import 'components/searchModal';
+@import 'components/payment_methods';
+
+
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+
+@import 'layouts/header';
+@import 'layouts/footer';
+

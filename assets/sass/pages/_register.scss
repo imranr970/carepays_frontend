@@ -1,0 +1,58 @@
+.register {
+    width:30%;
+    margin:auto;
+    margin-top:8rem;
+    margin-bottom:5rem;
+
+    .icons {
+      top:65%;
+    }
+
+    .account-heading {
+      font-size:2rem;
+    }
+
+    @include respond(tab-land) {
+        margin-top:6rem;
+        margin-bottom:4rem;
+    }
+
+    @include respond(tab-land-small) {
+        margin-top:4rem;
+        margin-bottom:3rem;
+        width:50%;
+    }
+
+    @include respond(tab-port) {
+        margin-top:2rem;
+        margin-bottom:2rem;
+        width:70%;
+    }
+
+    @include respond(phone) {
+        margin-top:1rem;
+        margin-bottom:1rem;
+        width:80%;
+        padding:1rem;
+    }
+
+    .card {
+        &__body {
+            padding:3rem;
+
+            .form {
+
+               & > * {
+                   margin-top:1rem;
+               }
+
+               &__label {
+                  color:#555;
+                  font-weight:600;
+               }
+
+            }
+        }
+    }
+
+}

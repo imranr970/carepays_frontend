@@ -1,0 +1,74 @@
+.search-page {
+  max-width:90rem;
+  margin:5rem auto;
+
+  .card {
+    box-shadow: 0 .1rem .15rem rgba(#000, .4);
+    &__body {
+      padding:0;
+    }
+
+    &__header {
+      background:#F7F7F7;
+      padding:1rem 1.2rem;
+      line-height:1.2;
+      font-size:1.5rem;
+    }
+
+  }
+
+  .search {
+
+    &-list {
+      margin:0;
+      padding:0;
+    }
+
+    &-list__item {
+      list-style: none;
+    }
+
+    &-list__link {
+
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color:#666;
+        display:block;
+        line-height: 1.1;
+        width:100%;
+        padding:1.5rem;
+        border-bottom:2px solid #ddd;
+      }
+
+      // &:last-child {
+      //   border:0;
+      // }
+
+      &--active {
+        background:#F0F0F0;
+        font-weight:bold;
+        opacity:.9;
+        &:hover {
+          opacity:1;
+        }
+      }
+
+      &:hover {
+        background:#F0F0F0;
+      }
+
+    }
+
+  }
+
+
+}
+
+.cost-list {
+  & > * {
+    margin-right:10px;
+    font-weight:bold;
+    color:#000;
+  }
+}

@@ -1,0 +1,36 @@
+.static_searchbox {
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background: $color-tertiary-dark;
+    color:#fff;
+    width:6rem;
+    height: 6rem;
+    border-radius:50%;
+    border:none;
+    
+    font-size:1.8rem;
+    font-family:'Montserrat', sans-serif;
+    font-weight:normal;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    z-index:5;
+    box-shadow:0 2rem 3rem rgba(#000, .4);
+    cursor:pointer;
+    transition: all .2s;
+
+    &:hover {
+        opacity:.8;
+        box-shadow:0 2.8rem 3.5rem rgba(#000, .4);
+        transform:translateY(-1px);
+    }
+
+    &:focus,
+    &:active {
+        box-shadow:0 2rem 3rem rgba(#000, .4);
+        transform:translateY(2px);
+    }
+}

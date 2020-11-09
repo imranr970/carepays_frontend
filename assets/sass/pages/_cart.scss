@@ -1,0 +1,78 @@
+.cart {
+
+
+  padding:6rem 10rem;
+  font-family: inherit;
+
+  .wrapper {
+
+    display:grid;
+    grid-template-columns: 80% 20%;
+    gap:2rem;
+
+    .grand-total-box {
+      background:$color-tertiary-light;
+      color:#fff;
+      padding:2rem 1.5rem;
+      font-family: inherit;
+    }
+
+    &__image-care {
+      width:100%;
+      overflow:hidden;
+      margin-top:2rem;
+      @include respond(tab-land-small) {
+        width:40%;
+        height:100%;
+      }
+      img {
+        display:block;
+        width:100%;
+        height:100%;
+        transition: all .2s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &__right {
+      @include respond(tab-land-small) {
+        grid-column:1/-1;
+        grid-row:2/3;
+        justify-self: start;
+        width:40%;
+      }
+
+      @include respond(tab-port) {
+        width:50%;
+      }
+    }
+
+    .card {
+      @include respond(tab-land-small) {
+        grid-column:1/-1;
+        grid-row:1/2;
+      }
+    }
+
+  }
+
+  @include respond(tab-land) {
+    padding:3rem 10rem;
+  }
+
+  @include respond(tab-land-small) {
+    padding:3rem 8rem;
+  }
+
+  @include respond(tab-port) {
+    padding:1rem 2rem;
+    grid-gap:.5rem;
+  }
+
+  @include respond(phone) {
+    padding:.5rem 1rem;
+  }
+
+}

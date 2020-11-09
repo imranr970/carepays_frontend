@@ -1,0 +1,49 @@
+.table {
+
+    padding:0;
+    border-spacing:0;
+    width:100%;
+    border-collapse: collapse;
+
+    & > * {
+        border-spacing:0;
+        font-size:1.2rem;
+    }
+
+    thead {
+        background:$color-grey-input;
+        margin:0;
+        border-spacing:0;
+        margin-bottom:.5rem;
+        font-size:1.3rem;
+        font-weight:normal;
+        color:#444;
+        text-align:left;
+    }
+
+}
+
+table {
+  border-collapse:collapse;
+}
+
+table, tr {
+    border:1px solid #F7F7F7;
+}
+
+th, td, tr {
+    padding:2rem 1.2rem !important;
+}
+
+tr:not(:first-child) {
+    background: #fcfcfc;
+}
+
+tr:first-child {
+    color:#222;
+}
+
+tr.total--row {
+    background:$color-grey-input;
+    color:#222;
+}

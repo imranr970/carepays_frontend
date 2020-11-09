@@ -1,0 +1,38 @@
+.card {
+    
+    background:#fff;
+    box-shadow: 0 .1rem .1rem rgba(#ccc, .4);
+    font-size:1.4rem;
+    &__body {
+
+        padding:2rem;
+        
+        &--center {
+            text-align:center;
+        }
+
+        .heading-4 {
+            font-size:1.8rem;
+            font-weight:600;
+        }
+    }
+
+    &__img {
+
+    }
+
+    &__list {
+
+    } 
+
+    &__item {
+        list-style:none;
+        line-height:1.6;
+        color:#999;
+    } 
+
+    &__text {
+
+    }
+
+}

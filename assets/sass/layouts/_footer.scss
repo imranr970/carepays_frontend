@@ -1,0 +1,109 @@
+.footer {
+
+    background: linear-gradient(to right, $color-tertiary-light, #47498d);
+    color:#fff;
+    padding-bottom:1rem;
+    font-size:1.4rem;
+
+    &__subscription {
+      border-bottom:1px solid #888;
+      padding:4rem 0;
+      margin-bottom:4rem;
+      .form {
+        display:grid;
+        grid-template-columns: 30% 10%;
+        justify-content: center;
+        align-items:center;
+        grid-gap:1rem;
+
+        @include respond(tab-land-small) {
+          grid-template-columns: 40% 10%;
+        }
+
+        @include respond(tab-port) {
+          grid-template-columns: 60% 10%;
+        }
+
+        @include respond(tab-phone) {
+          grid-template-columns: 70% 10%;
+        }
+      }
+
+    }
+
+    &__menu {
+
+    }
+
+    &__list {
+        display:flex;
+        justify-content: space-evenly;
+        margin:0;
+        padding:0;
+
+        @include respond(tab-port) {
+            flex-wrap:wrap;
+        }
+    }
+
+    &__item {
+        list-style:none;
+    }
+
+    &__link {
+        &,
+        &:link,
+        &:visited {
+            transition: all .2s;
+            color:#fff;
+            text-decoration:none;
+            text-transform:capitalize;
+            padding-top:4rem !important;
+            &:not(:last-child) {
+                padding-right:4rem !important;
+
+            }
+
+            @include respond(tab-port) {
+                padding:3rem 0 !important;
+            }
+        }
+
+        &:hover {
+            color:$color-grey-dark-1;
+            text-shadow: 0 1.3rem 2rem rgba(#000, .4);
+            transform:translateY(-2px);
+        }
+    }
+
+    &__menu-lower {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin:2rem 0;
+        color:$color-grey-dark-1;
+    }
+
+    &__social {
+
+        margin:1rem 0;
+
+        &-icons {
+            &:not(:last-child) {
+                margin-right:.8rem;
+            }
+            font-size:1.8rem;
+        }
+    }
+
+    &__contact {
+        margin:1rem 0;
+    }
+
+    &__copyrights {
+        margin:1rem 0;
+        font-size:1.3rem;
+    }
+
+
+}

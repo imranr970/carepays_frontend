@@ -1,0 +1,58 @@
+.user-insurance {
+  padding:1rem 2rem;
+
+  @include respond(tab-land) {
+    padding:3rem;
+  }
+
+  @include respond(tab-land-small) {
+      padding:2rem;
+  }
+
+  @include respond(tab-port) {
+      padding:1rem;
+  }
+
+  .form-editable {
+
+    margin-top:3rem;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 25rem));
+    justify-content: left;
+    gap:2rem;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    &__input-control {
+      background:$color-grey-input;
+    }
+
+  }
+
+  .address-form {
+    width:60%;
+    margin: 2rem auto;
+
+    @include respond(tab-port) {
+      width:80%;
+    }
+
+    @include respond(tab-phone) {
+      width:100%;
+    }
+
+  }
+
+  .account-form {
+    padding: 0 10rem;
+    @include respond(tab-port) {
+      padding: 0 6rem;
+    }
+
+    @include respond(tab-phone) {
+      padding: 0 1rem;
+    }
+  }
+}

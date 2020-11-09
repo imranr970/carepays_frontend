@@ -1,0 +1,45 @@
+<template>
+  <main>
+    <img v-if="type==='visa'" src="@/assets/images/cards/visa.png" :alt="image" />
+    <img v-else-if="type==='mastercard'" src="@/assets/images/cards/master-card.png" :alt="image" />
+    <img v-else-if="type==='paypal'" src="@/assets/images/cards/paypal.png" :alt="image" />
+    <img v-else-if="type==='westernUnion'" src="@/assets/images/cards/western-union.png" :alt="image" />
+    <img v-else-if="type==='discover'" src="@/assets/images/cards/discover.png" :alt="image" />
+
+    <svg v-else id="iconCardFront" viewBox="0 0 48 29">
+      <title>Generic Card</title>
+      <path d="M46.177 29H1.823C.9 29 0 28.13 0 27.187V1.813C0 .87.9 0 1.823 0h44.354C47.1 0 48 .87 48 1.813v25.375C48 28.13 47.1 29 46.177 29z" style="fill: #FFF"></path>
+      <path d="M4.8 9.14c0-.427.57-.973 1.067-.973h7.466c.496 0 1.067.546 1.067.972v3.888c0 .425-.57.972-1.067.972H5.867c-.496 0-1.067-.547-1.067-.972v-3.89z" style="fill: #828282"></path>
+      <rect style="fill: #828282" x="10.8" y="22.167" width="3.6" height="2.333" rx="1.167"></rect>
+      <rect style="fill: #828282" x="4.8" y="22.167" width="3.6" height="2.333" rx="1.167"></rect>
+      <path d="M6.55 16.333h34.9c.966 0 1.75.784 1.75 1.75 0 .967-.784 1.75-1.75 1.75H6.55c-.966 0-1.75-.783-1.75-1.75 0-.966.784-1.75 1.75-1.75z" style="fill: #828282"></path>
+      <ellipse style="fill: #828282" cx="40.2" cy="6.417" rx="3" ry="2.917"></ellipse>
+    </svg>
+
+
+  </main>
+</template>
+
+<script>
+export default {
+
+  name:'cardImage',
+
+  props: {
+    image: {
+      type:String,
+      required:true
+    }
+  },
+
+  computed: {
+    type() {
+      if(this.image) {
+        return this.image.toLowerCase();
+      }
+      return null;
+    }
+  }
+
+}
+</script>

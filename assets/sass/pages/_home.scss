@@ -1,0 +1,485 @@
+.home {
+
+  display:grid;
+  grid-template-rows: 100vh min-content repeat(2, minmax(min-content, 40vw));
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(9, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+  @include respond(tab-port) {
+    grid-template-rows: 80vh min-content repeat(2, minmax(min-content, 40vw));
+  }
+
+  @include respond(phone) {
+    grid-template-rows: 70vh min-content repeat(2, minmax(min-content, 40vw));
+  }
+
+  & > * {
+    padding:6rem;
+  }
+
+  @include respond(tab-land-small) {
+    padding:3rem;
+  }
+
+  @include respond(tab-port) {
+    padding:0;
+  }
+
+  &__display {
+
+    background:-moz-linear-gradient(to right bottom, $color-primary 0,$color-primary-light 100%);
+
+    background:-webkit-linear-gradient(to right bottom, $color-primary 0,$color-primary-light 100%);
+    background:linear-gradient(to right bottom, $color-primary 0,$color-primary-light 100%);
+
+    grid-row:1/2;
+    grid-column:full-start/full-end;
+
+    //nested grid
+    display:grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    justify-items:center;
+    align-items:center;
+
+    grid-gap:3rem;
+
+    &--heading-section {
+
+      transform:translateY(-50%);
+      grid-column:1/2;
+
+      @include respond(tab-land) {
+        grid-column: 1/-1;
+        transform:translateY(-30%);
+      }
+
+      @include respond(tab-port) {
+        transform:translateY(-20%);
+      }
+
+      @include respond(phone) {
+        transform:translateY(-5%);
+      }
+
+    }
+
+    &--background-image {
+      grid-column:2/3;
+
+      @include respond(tab-land) {
+        grid-column: 1/-1;
+        align-self:center;
+        width:65%;
+        margin-top:2rem;
+        transform:translateY(-10%);
+      }
+
+      @include respond(tab-port) {
+        width:60%;
+        transform:translateY(-15%);
+      }
+
+      @include respond(phone) {
+        width:60%;
+        transform:translateY(-30%);
+      }
+
+      img {
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+        display:block;
+      }
+    }
+  }
+
+  &__search-box {
+
+    grid-row:1/2;
+    grid-column:center-start/center-end;
+
+    @include respond(tab-port) {
+      grid-column:full-start/full-end;
+      margin:0 3rem;
+    }
+
+    background:white;
+    box-shadow:0 2.5rem 4rem rgba(#000, .4);
+    padding:5rem;
+    z-index:2;
+    align-self: end;
+    transform:translateY(50%);
+    //set position
+    position:relative;
+
+    #location {
+      padding-right:4rem;
+    }
+
+    @include respond(tab-land) {
+      transform:translateY(90%);
+    }
+
+    @include respond(tab-land-small) {
+      transform:translateY(80%);
+    }
+
+    @include respond(tab-port) {
+      transform:translateY(90%);
+    }
+
+    @include respond(phone) {
+      transform:translateY(70%);
+    }
+
+    .search-btns {
+      position: absolute;
+      top:0.02em;
+      left:0;
+      transform:translateY(-100%);
+    }
+
+    .form {
+        margin-top:2rem;
+        display:grid;
+        grid-template-columns: 5fr 2fr 1fr;
+        grid-gap:1rem;
+        align-items: center;
+
+        &__input {
+
+          width:100%;
+          padding:1.3rem;
+          border:1px solid #ccc;
+          border-radius:5px;
+          font-size:1.6rem;
+          transition:all .2s;
+
+          //placeholder styling
+          &::-webkit-input-placeholder {
+            color:#ccc;
+          }
+
+          @include respond(tab-land) {
+            padding:1rem;
+            font-size:1.25rem;
+          }
+
+        }
+
+    }
+  }
+
+  &__patients-box {
+
+    padding-top:20rem;
+
+    @include respond(tab-port) {
+      padding-top:30rem !important;
+    }
+
+    @include respond(phone) {
+      padding-top:33rem !important;
+    }
+
+    background:$color-grey-light-1;
+
+    grid-row:2/3;
+    grid-column:full-start/full-end;
+
+    //nested grid
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-gap:3rem;
+
+    justify-items: center;
+    align-items: center;
+
+    &--img {
+
+      width: 100%;
+      overflow:hidden;
+
+      @include respond(tab-land-small) {
+        grid-column:1/-1;
+        justify-self: center;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display:block;
+        @include respond(tab-land) {
+          width:90%;
+          height:90%;
+        }
+
+        @include respond(tab-land-small) {
+          width:80%;
+          height:80%;
+        }
+
+        @include respond(tab-port) {
+          width:70%;
+          height:70%;
+        }
+
+      }
+    }
+
+    &--content {
+
+      align-self: start;
+      justify-self: end;
+
+      @include respond(tab-land-small) {
+        grid-column:1/-1;
+        justify-self: center;
+      }
+
+    }
+
+  }
+
+  .patients-box,
+  .providers-box,
+  .benefit-card {
+    &__list {
+
+      &-item {
+        list-style:none;
+        line-height:2;
+        font-size:1.8rem;
+        text-transform:capitalize;
+      }
+
+    }
+  }
+
+  &__providers-box {
+    background:#F0F0F0;
+    grid-row:3/4;
+    grid-column:full-start/full-end;
+
+    //nested grid
+    display: grid;
+    grid-template-columns: minmax(min-content, 60rem) minmax(min-content, 1fr);
+    grid-gap:3rem;
+
+    justify-items: center;
+    align-items: center;
+
+
+    &--img {
+      align-self: start;
+      overflow:hidden;
+      width:80%;
+
+      @include respond(phone) {
+        grid-column:1/-1;
+        justify-self: center;
+        width:100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display:block;
+
+        @include respond(tab-land-small) {
+          width:60%;
+        }
+
+        @include respond(tab-port) {
+          width:50%;
+        }
+
+        @include respond(phone) {
+          width:40%;
+        }
+
+      }
+    }
+
+    &--content {
+      align-self: start;
+      @include respond(tab-land-small) {
+        grid-column:1/-1;
+        justify-self: center;
+      }
+    }
+  }
+
+
+  &__benefit-card {
+
+    background:white;
+
+    grid-row:4/5;
+    grid-column:full-start/full-end;
+
+    //nested grid
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: minmax(max-content, 40rem) minmax(min-content, 1fr);
+    grid-gap:3rem;
+
+
+    &--img {
+      justify-self: start;
+      overflow:hidden;
+      width:100%;
+      align-self:start;
+
+      @include respond(tab-land-small) {
+        grid-column:1/-1;
+        justify-self: center;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include respond(tab-land-small) {
+          width:80%;
+        }
+        @include respond(tab-port) {
+          width:60%;
+        }
+        @include respond(phone) {
+          width:50%;
+        }
+
+      }
+    }
+
+    &--content {
+      justify-self: end;
+      @include respond(tab-land-small) {
+        grid-column:1/-1;
+        justify-self: center;
+      }
+    }
+
+  }
+
+  &__happy-patients {
+
+    grid-column:center-start/center-end;
+    justify-self:center;
+    text-align:center;
+    padding:8rem 10rem;
+
+    @include respond(tab-land-small) {
+      padding:6rem 8rem;
+    }
+
+    @include respond(tab-port) {
+      padding:4rem 6rem;
+    }
+
+    @include respond(phone) {
+      padding:2rem 4rem;
+    }
+
+    &--text {
+
+      color:#999;
+      font-size:1.6rem;
+      line-height:1.3;
+      position:relative;
+      margin-top:5rem;
+      quotes: "\201C""\201D""\2018""\2019";
+      transition:all 3s;
+
+      &::before {
+        content:'\201C';
+        position: absolute;
+        top:-30%;
+        left:50%;
+        transform:translateY(-50%);
+        color:#ddd;
+        font-size:7.9rem;
+      }
+
+    }
+
+    .text--1 {
+      animation-name:moveRight !important;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+    }
+
+    .text--2 {
+      animation-name:moveLeft !important;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+    }
+
+
+    .user {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      grid-gap:10rem;
+
+      @include respond(tab-port) {
+        grid-gap:5rem;
+      }
+
+
+      &--1 {
+
+        @include respond(tab-land) {
+          grid-column:1/-1;
+        }
+
+      }
+
+      &--2 {
+        @include respond(tab-land) {
+          grid-column:1/-1;
+        }
+      }
+
+      .about {
+
+        animation-name:moveTop !important;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+
+        display:flex;
+        justify-content: center;
+        margin:4rem 0;
+
+        &__img {
+
+          width:40px;
+          height: 40px;
+          margin-right:1.5rem;
+          align-self:flex-start;
+          img {
+            display:block;
+            width:100%;
+            height:100%;
+            border-radius:50%;
+          }
+
+        }
+
+        h5 {
+          font-weight:700;
+          color:#222;
+        }
+
+        p {
+          font-size:1.2rem;
+        }
+
+      }
+
+    }
+
+  }
+
+}//home

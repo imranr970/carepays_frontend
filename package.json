@@ -1,0 +1,52 @@
+{
+  "name": "carepays",
+  "version": "1.0.0",
+  "description": "Carepays Healthcare IQ project",
+  "author": "Muhammad Imran",
+  "authorEmail": "imranr970@gmail.com",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "pm2 start npm --name carepays -- start",
+    "restart": "pm2 restart carepays",
+    "delete-app": "pm2 delete carepays"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.0",
+    "@nuxtjs/axios": "^5.9.5",
+    "@nuxtjs/toast": "^3.3.0",
+    "chart.js": "^3.0.0-alpha",
+    "chokidar": "^3.4.2",
+    "jquery": "^3.5.1",
+    "jszip": "^3.2.2",
+    "lodash": "^4.17.19",
+    "moment": "^2.24.0",
+    "nuxt": "^2.13.3",
+    "vue": "^2.6.12",
+    "vue-click-outside": "^1.1.0",
+    "vue-ctk-date-time-picker": "^2.4.0",
+    "vue-debounce": "^2.5.6",
+    "vue-lodash": "^2.1.2",
+    "vue-moment": "^4.1.0",
+    "vue-observe-visibility": "^0.4.6",
+    "vue-server-renderer": "^2.3.0",
+    "vue-template-compiler": "^2.6.12",
+    "vue-text-highlight": "^2.0.9"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@mdi/font": "^4.5.95",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.39.1"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "50000"
+    }
+  }
+}
